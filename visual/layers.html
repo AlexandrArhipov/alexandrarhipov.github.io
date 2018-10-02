@@ -1,10 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
+    <!-- Site made with Mobirise Website Builder v4.8.2, https://mobirise.com -->
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.2, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="../assets/images/mbr-122x69.jpg" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Работа со слоями</title>
+    <link rel="stylesheet" href="../assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="../assets/tether/tether.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="../assets/theme/css/style.css">
+    <link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
+
 </head>
 <body>
+<section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top collapsed bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="../index.html">
+                         <img src="../assets/images/mbr-122x69.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="../index.html">
+                        Главная</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab1.html">Карта сайта<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab2.html">Визуальные эффекты<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab3.html">Баннеры и проверка ввода<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab4.html">Поиск<br></a></div>
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobiri.se/n">free simple site templates</a></section><section class="cid-qTkA127IK8 mbr-fullscreen" id="header2-1">
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <hr>
+                <div class="mbri-responsive mbr-iconfont" style="font-size: 44px;">&nbsp;</div>
+                <p>Лабораторная работа №2</p>
+                <h2>Пример работы со слоями</h2>
+                <title>Пример работы со слоями</title>
+                <div class="container align-center">
+                    <div class="layers-wrapper" style="height: 308px;">
+                        <div style="position: absolute; top: 0; left: 0; z-index: 1;" id="first-layer">
+                            <img src="../assets/images/circles.png" width="148">
+                        </div>
+                        <div id ="second-layer" style="position: absolute; top: 30%; left: 30%; z-index: 3">
+                            <img src="../assets/images/colors.jpeg" width="90" height="90">
+                        </div>
+                    </div>
+
+                        <div class="d-flex flex-column">
+                            <button type="button" class="mb-2 mt-2" onclick="moveLayer('first-layer', -1);">Первый слой назад</button>
+                            <button type="button" onclick="moveLayer('first-layer', 1);">Первый слой вперед</button>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <button type="button" class="mb-2 mt-2" onclick="moveLayer('second-layer', -1);">Второй слой назад</button>
+                            <button type="button" onclick="moveLayer('second-layer', 1);">Второй слой вперед</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="../assets/web/assets/jquery/jquery.min.js"></script>
+<script src="../assets/popper/popper.min.js"></script>
+<script src="../assets/tether/tether.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/smoothscroll/smooth-scroll.js"></script>
+<script src="../assets/dropdown/js/script.min.js"></script>
+<script src="../assets/touchswipe/jquery.touch-swipe.min.js"></script>
+<script src="../assets/theme/js/script.js"></script>
+
+<script>
+    const path = d3.select('#my_path');
+
+    function getLines(offset) {
+        const xOffset = 10;
+        let str = "M "+xOffset+" "+getY(offset)+" ";
+        for (let i = 1; i < 200; i++) {
+            str += "L "+(i+xOffset)+" "+getY(i+offset)+" ";
+        }
+        return str;
+    }
+    function getY(x) {
+        return 30*Math.cos(Math.PI*x/100) + 50;
+    }
+    function f() {
+        let i = 0;
+        setInterval(function () {
+            path.attr("d",getLines(i));
+            i++;
+        }, 20);
+    }
+    f();
+    function moveLayer(id, direction) {
+        const element = $('#'+id);
+        const zIndex = parseInt(element.css('z-index'));
+        element.css('z-index', (zIndex + direction));
+    }
+</script>
 
 </body>
 </html>
