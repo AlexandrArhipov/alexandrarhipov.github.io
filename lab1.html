@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="shortcut icon" href="assets/images/mbr-122x69.jpg" type="image/x-icon">
     <meta name="description" content="">
-    <title>Home</title>
+    <title>Карта сайта</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -17,33 +17,6 @@
     <link rel="stylesheet" href="assets/dropdown/css/style.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-  <script>
-    var urlMapping = {
-        'Yandex': 'http://www.yandex.ru/yandsearch?rpt=rad&text=',
-        'Google': 'http://www.google.ru/search?hl=ru&newwindow=1&q=',
-        'MailRu': 'http://go.mail.ru/search?fm=1&rf=e.mail.ru&q=',
-        'DuckDuckGo': 'https://duckduckgo.com/?q=',
-        'Yahoo': 'https://search.yahoo.com/search?p=',
-        'Bing': 'http://www.bing.com/search?q=',
-        'Rambler': 'https://nova.rambler.ru/search?query=',
-        'Wikipedia': 'https://ru.wikipedia.org/w/index.php?search=',
-        'Aport': 'https://www.aport.ru/search/?q=',
-        'Search': 'https://www.search.com/web?q=',
-        'Clarivate': 'https://clarivate.com/?s=',
-        'Webcrawler': 'http://www.webcrawler.com/serp?q=',
-        'IRR': 'https://irr.ru/searchads/search/keywords=',
-        'Price': 'https://price.ru/search/?query=',
-        'Ask': 'https://www.ask.com/web?q='
-    };
-  function FindText(){
-        var url = urlMapping[document.find.searchOptions.value]
-        var FullUrl=url+document.find.searchtext.value;
-         if (document.find.newwin.checked){  var FindWin=window.open(FullUrl); }
-         else{ location.href = FullUrl; } }
-    </script>
-
-
 </head>
 <body>
 <section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
@@ -71,34 +44,42 @@
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="page1.html">Работа №4<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab1.html">Карта сайта<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab2.html">Визуальные эффекты<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab3.html">Баннеры и проверка ввода<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab4.html">Поиск<br></a></div>
         </div>
     </nav>
 </section>
 
 <section class="engine"><a href="https://mobiri.se/n">free simple site templates</a></section><section class="cid-qTkA127IK8 mbr-fullscreen" id="header2-1">
-
-
-
-
-
     <div class="container align-center">
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
-               <hr><div class="mbri-responsive mbr-iconfont" style="font-size: 44px;">&nbsp;</div><p>Лабораторная работа №4</p><figure class="mbr-figure container"><div class="image-block" style="width: 25%; margin: auto;"></div></figure><hr>      <title>Поиск</title> <form name="find">      Найти:  <br>      <input type="text" name="searchtext" size="40"><br>      <input type="checkbox" name="newwin">Открыть в новом окне<br>      <br>С помощью поисковой системы:<br>      <select name="searchOptions"></select>      <input type="button" value="Найти" onclick="FindText()">    </form>
-
-
+               <hr>
+                <div class="mbri-responsive mbr-iconfont" style="font-size: 44px;">&nbsp;</div>
+                <p>Лабораторная работа №1</p>
+                <h2>Карта сайта</h2>
+                <title>Карта сайта</title>
+                <div class="container align-left">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <ul>
+                            <li><a href="lab1.html">Карта сайта</a></li>
+                            <li><a href="lab2.html">Визуальные эффекты</a></li>
+                            <ul>
+                                <li><a href="visual/dynamic_blocks.html">Карта России</a></li>
+                                <li><a href="visual/on_mouse_over.html">Изменение объектов при наведении мыши</a></li>
+                                <li><a href="visual/layers.html">Работа со слоями</a></li>
+                            </ul>
+                            <li><a href="lab3.html">Баннеры и проверка ввода</a></li>
+                            <li><a href="lab4.html">Поиск</a></li>
+                        </ul>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-
-    <script>
-        var keys = Object.keys(urlMapping);
-        for( key in keys ) {
-            document.find.searchOptions.add( new Option( keys[key] ) );
-        };
-    </script>
-
 </section>
 
 

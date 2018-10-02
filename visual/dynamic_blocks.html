@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <!-- Site made with Mobirise Website Builder v4.8.2, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.2, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="../assets/images/mbr-122x69.jpg" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Карта сайта</title>
+    <link rel="stylesheet" href="../assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="../assets/tether/tether.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="../assets/theme/css/style.css">
+    <link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
+</head>
+<body>
+<section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
+
+<style>
+    :root
+    {
+        --no-mouse-color: black;
+        --mouse-color: darkred;
+    }
+    .map-div{
+        position: relative;
+    }
+    .city-div
+    {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: var(--no-mouse-color);
+        border-radius: 10px;
+    }
+    .description-div
+    {
+        position: absolute;
+        background: gray;
+        border: black 1px solid;
+        width: auto;
+        border-radius: 10px;
+    }
+    .filtered
+    {
+        filter: none;
+    }
+    html, body{
+        height: auto !important;
+    }
+    .layers-wrapper
+    {
+        position: relative;
+    }
+</style>
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top collapsed bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="../index.html">
+                         <img src="../assets/images/mbr-122x69.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="../index.html">
+                        Главная</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab1.html">Карта сайта<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab2.html">Визуальные эффекты<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab3.html">Баннеры и проверка ввода<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="../lab4.html">Поиск<br></a></div>
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobiri.se/n">free simple site templates</a></section><section class="cid-qTkA127IK8 mbr-fullscreen" id="header2-1">
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <hr>
+                <div class="mbri-responsive mbr-iconfont" style="font-size: 44px;">&nbsp;</div>
+                <p>Лабораторная работа №2</p>
+                <h2>Карта России</h2>
+                <title>Карта России</title>
+                <h6 id="seas">Наведите на моря, чтобы получить о них информацию. </h6>
+                <div class="map-div mt-3">
+                    <img src="../assets/images/map-russia.jpg" width="600" height="329">
+                    <div class="city-div" id="black-div"></div>
+                    <div class="city-div" id="balt-div"></div>
+                    <div class="city-div" id="baren-div"></div>
+                    <div class="city-div" id="bering-div"></div>
+                    <div class="city-div" id="ohot-div"></div>
+                    <div class="city-div" id="jap-div"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="../assets/web/assets/jquery/jquery.min.js"></script>
+<script src="../assets/popper/popper.min.js"></script>
+<script src="../assets/tether/tether.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/smoothscroll/smooth-scroll.js"></script>
+<script src="../assets/dropdown/js/script.min.js"></script>
+<script src="../assets/touchswipe/jquery.touch-swipe.min.js"></script>
+<script src="../assets/theme/js/script.js"></script>
+
+<script>
+    $('#black-div').css({"left":"165px", "top":"183px"}).mouseenter(onMouseEnterCity).mouseleave(onMouseLeaveCity);
+    $('#balt-div').css({"left":"240px", "top":"33px"}).mouseenter(onMouseEnterCity).mouseleave(onMouseLeaveCity);
+    $('#baren-div').css({"left":"360px", "top":"60px"}).mouseenter(onMouseEnterCity).mouseleave(onMouseLeaveCity);
+    $('#bering-div').css({"left":"730px", "top":"30px"}).mouseenter(onMouseEnterCity).mouseleave(onMouseLeaveCity);
+    $('#ohot-div').css({"left":"710px", "top":"200px"}).mouseenter(onMouseEnterCity).mouseleave(onMouseLeaveCity);
+    $('#jap-div').css({"left":"690px", "top":"280px"}).mouseenter(onMouseEnterCity).mouseleave(onMouseLeaveCity);
+    const desc =
+        {
+            'black-div':
+                {
+                    name: 'Черное море',
+                    area: '442,0'
+                },
+            'balt-div':
+                {
+                    name: 'Балтийское море',
+                    area: '419,0'
+                },
+            'baren-div':
+                {
+                    name: 'Баренцево море',
+                    area: '1424,0'
+                },
+            'bering-div':
+                {
+                    name: 'Берингово море',
+                    area: '2315,0'
+                },
+            'ohot-div':
+                {
+                    name: 'Охотское море',
+                    area: '1603,0'
+                },
+            'jap-div':
+                {
+                    name: 'Японское море',
+                    area: '1062,0'
+                }
+        };
+    function onMouseEnterCity() {
+        const me = $(this);
+        me.css("background","var(--mouse-color)");
+        makeDescription(me);
+    }
+    function onMouseLeaveCity() {
+        $(this).css("background","var(--no-mouse-color)");
+        $('#description').remove();
+    }
+    function makeDescription(me) {
+        const id = me.attr('id');
+        const text = '<p class="m-0">Название: '+desc[id].name+'</p><p class="m-0">Площадь: '+desc[id].area+' км<sup>2</sup></p>';
+        let str = me.css('top');
+        const top = parseInt(str.substr(0, str.length-2)) + 10;
+        str = me.css('left');
+        const left = parseInt(str.substr(0, str.length-2)) + 10;
+        $('<div class="description-div p-1" style="top: '+top+'px; left: '+left+'px" id="description">'+text+'</div>').appendTo(me.parent());
+    }
+    function doOnStart() {
+        const descField = $('#seas');
+        const text = descField.text();
+        const str = "Доступны: "+ Object.keys(desc).map(function (val) {
+            return desc[val].name;
+        }).join(", ") + ".";
+        descField.text(text + str);
+    }
+    doOnStart();
+</script>
+
+
+</body>
+</html>
