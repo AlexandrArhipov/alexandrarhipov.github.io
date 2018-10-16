@@ -17,48 +17,6 @@
     <link rel="stylesheet" href="../assets/dropdown/css/style.css">
     <link rel="stylesheet" href="../assets/theme/css/style.css">
     <link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
-
-    <style>
-        .container {
-            position: relative;
-            width: 50%;
-        }
-
-        .image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: .5s ease;
-            background-color: #008CBA;
-        }
-
-        .container:hover .overlay {
-            opacity: 1;
-        }
-
-        .text {
-            color: white;
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 <section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
@@ -103,18 +61,12 @@
                 <p>Лабораторная работа №2</p>
                 <h2>Эффекты при наведении мыши</h2>
                 <title>Эффекты при наведении мыши</title>
-                <div class="container align-left">
-                    <img src="../assets/images/tree.jpg" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Изображение дерева</div>
-                    </div>
+                <div class="container align-center">
+                    <img src="../assets/images/tree.jpg" alt="Avatar" class="image" id="top-picture" width="320" height="180">
                 </div>
                 <br/>
-                <div class="container align-left">
-                    <img src="../assets/images/bridge.jpg" alt="Avatar" class="image">
-                    <div class="overlay">
-                        <div class="text">Изображение моста</div>
-                    </div>
+                <div class="container align-center">
+                    <img src="../assets/images/bridge.jpg" alt="Avatar" class="image" id="bottom-picture" width="320" height="180">
                 </div>
             </div>
         </div>
@@ -131,6 +83,49 @@
 <script src="../assets/touchswipe/jquery.touch-swipe.min.js"></script>
 <script src="../assets/theme/js/script.js"></script>
 
+<script>
+    let idInterval = 0;
+    $('#top-picture').mouseenter(function () {
+        idInterval = setTimeout(function tick(value, element) {
+            doInvert(value, element);
+            idInterval = setTimeout(tick, 50, value+1, element);
+        }, 50, 0, $(this));
+    }).mouseleave(function () {
+        reset($(this));
+    });
+    $('#bottom-picture').mouseenter(
+        function () {
+            idInterval = setTimeout(function tick(value, element) {
+                doBlur(value, element);
+                idInterval = setTimeout(tick, 20, value+1, element);
+            }, 20, 0, $(this));
+        }).mouseleave(function () {
+        reset($(this));
+    });
+    $('#right-picture').mouseenter(
+        function () {
+            idInterval = setTimeout(function tick(value, element) {
+                doHueRotate(value, element);
+                idInterval = setTimeout(tick, 20, value+10, element);
+            }, 20, 0, $(this));
+        }).mouseleave(function () {
+        reset($(this));
+    });
+    function reset(element) {
+        clearInterval(idInterval);
+        element.css('filter','none');
+    }
+
+    function doInvert(value, element) {
+        element.css("filter", "invert("+(-0.5*Math.cos(value*Math.PI/20)+0.5)+")");
+    }
+    function doBlur(value, element) {
+        element.css("filter", "blur("+(-2*Math.cos(value*Math.PI/20)+2)+"px)");
+    }
+    function doHueRotate(value, element) {
+        element.css("filter", "hue-rotate("+(value%361)+"deg)");
+    }
+</script>
 
 </body>
 </html>

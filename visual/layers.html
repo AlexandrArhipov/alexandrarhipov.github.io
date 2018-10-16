@@ -97,8 +97,6 @@
 <script src="../assets/theme/js/script.js"></script>
 
 <script>
-    const path = d3.select('#my_path');
-
     function getLines(offset) {
         const xOffset = 10;
         let str = "M "+xOffset+" "+getY(offset)+" ";
@@ -110,14 +108,15 @@
     function getY(x) {
         return 30*Math.cos(Math.PI*x/100) + 50;
     }
-    function f() {
+    function cycleMove() {
         let i = 0;
         setInterval(function () {
-            path.attr("d",getLines(i));
+            const element = $('#first-layer');
+            element.css('left', (Math.cos(i/40) * 50) + 50 + '%');
             i++;
         }, 20);
     }
-    f();
+    cycleMove();
     function moveLayer(id, direction) {
         const element = $('#'+id);
         const zIndex = parseInt(element.css('z-index'));
