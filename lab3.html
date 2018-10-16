@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <!-- Site made with Mobirise Website Builder v4.8.2, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.2, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/mbr-122x69.jpg" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <script>
+        function verifyInputs() {
+            $('.is-invalid').removeClass('is-invalid');
+            const name = $('#user_name');
+            if (name.val().length === 0)
+            {
+                name.addClass('is-invalid');
+                return false;
+            }
+            const email = $('#user_email');
+            const emailErr = $('#email-invalid');
+            if (email.val().length === 0)
+            {
+                emailErr.text("Необходимо указать почту!");
+                email.addClass('is-invalid');
+                return false;
+            }
+            if (!email.val().includes('@'))
+            {
+                emailErr.text("Введенный адрес не валидный!");
+                email.addClass('is-invalid');
+                return false;
+            }
+            onSuccess();
+        }
+        function onSuccess() {
+            $('form').remove();
+            const div = $('#response');
+            div.text('Ваше предложение отправлено! Спасибо за ваши предложения! Ждите нашего ответа в ближайшее время.');
+        }
+    </script>
+</head>
+<body>
+<section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top collapsed bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/mbr-122x69.jpg" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Главная</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab1.html">Карта сайта<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab2.html">Визуальные эффекты<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab3.html">Баннеры и проверка ввода<br></a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="lab4.html">Поиск<br></a></div>
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobiri.se/n">free simple site templates</a></section><section class="cid-qTkA127IK8 mbr-fullscreen" id="header2-1">
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+               <hr>
+                <div class="mbri-responsive mbr-iconfont" style="font-size: 44px;">&nbsp;</div>
+                <p>Лабораторная работа №3</p>
+                <h2>Форма обратной связи</h2>
+                <div class="container align-left">
+                    <main role="main" class="inner cover">
+                        <div class="col-md-12 text-left" id="response"></div>
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="user_name">Ваше имя: </label>
+                                    <input type="text" class="form-control" id="user_name" placeholder="Введите имя">
+                                    <div class="invalid-feedback" id="name-invalid">
+                                        Необходимо ввести имя!
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="user_email">Ваша электронная почта: </label>
+                                    <input type="text" class="form-control" id="user_email" placeholder="Введите почту">
+                                    <div class="invalid-feedback" id="email-invalid">
+                                        Необходимо указать почту!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="user_wishes">Ваши пожелания: </label>
+                                    <textarea class="form-control" id="user_wishes" rows="4" placeholder="Не жалейте слов...">
+                    </textarea>
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-end">
+                                <div class="col-md-4">
+                                    <button class="btn btn-block " type="button" onclick="verifyInputs()">
+                                        Отправить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </main>
+                </div>
+            </div>
+            <object type="application/x-shockwave-flash"
+                    data="assets/images/city_scape_banner-1.swf" width="800" height="150">
+                <param name="quality" value="high">
+                <param name="wmode" value="opaque">
+            </object>
+        </div>
+    </div>
+    <object type="application/x-shockwave-flash"
+            data="assets/images/bet_trader120x240.swf" width="120" height="240">
+        <param name="quality" value="high">
+        <param name="wmode" value="opaque">
+    </object>
+</section>
+
+
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+<script src="assets/popper/popper.min.js"></script>
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/dropdown/js/script.min.js"></script>
+<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+<script src="assets/theme/js/script.js"></script>
+  
+  
+</body>
+</html>
